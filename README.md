@@ -1,5 +1,5 @@
-# spark-data-manipulation
-Projeto de Aplicações Distribuídas: Aprendizado Federado Simulado com Google Colab
+# Projeto de Aplicações Distribuídas: Aprendizado Federado Simulado com Google Colab
+
 Descrição do Projeto
 Este projeto simula o Aprendizado Federado usando Python no Google Colab, demonstrando uma abordagem onde múltiplos clientes (nós) treinam um modelo de machine learning em dados locais. Em vez de compartilhar dados privados, cada nó treina localmente e compartilha apenas os parâmetros do modelo. O servidor central agrega os parâmetros recebidos de cada nó para formar um modelo global atualizado.
 
