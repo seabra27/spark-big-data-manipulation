@@ -8,18 +8,19 @@ Esta abordagem é ideal para ambientes onde os dados não podem ser centralizado
 Estrutura do Projeto
 O projeto simula uma rede de nós que treina um modelo de aprendizado distribuído. Abaixo estão os componentes principais:
 
-Inicialização dos Dados e Modelo: Cada nó inicia com um conjunto de dados exclusivo e uma cópia inicial do modelo.
-Treinamento Local em Cada Nó: Os nós executam o treinamento usando uma função que calcula os gradientes baseados nos dados locais.
-Agregação Centralizada dos Pesos: Após o treinamento, cada nó envia seus pesos atualizados ao servidor central, que os agrega para atualizar o modelo global.
-Redistribuição do Modelo Global: Após a agregação, o modelo global atualizado é redistribuído para cada nó, que usa os novos parâmetros para continuar o treinamento.
+- Inicialização dos Dados e Modelo: Cada nó inicia com um conjunto de dados exclusivo e uma cópia inicial do modelo.
+- Treinamento Local em Cada Nó: Os nós executam o treinamento usando uma função que calcula os gradientes baseados nos dados locais.
+- Agregação Centralizada dos Pesos: Após o treinamento, cada nó envia seus pesos atualizados ao servidor central, que os agrega para atualizar o modelo global.
+- Redistribuição do Modelo Global: Após a agregação, o modelo global atualizado é redistribuído para cada nó, que usa os novos parâmetros para continuar o treinamento.
+
 Estrutura do Código
 O código é dividido em várias funções que executam as etapas de treinamento federado. As principais funções incluem:
 
-Função de Treinamento Local: Cada nó executa uma função de treinamento que usa os dados locais para ajustar o modelo. Isso evita o compartilhamento de dados entre os nós.
+- Função de Treinamento Local: Cada nó executa uma função de treinamento que usa os dados locais para ajustar o modelo. Isso evita o compartilhamento de dados entre os nós.
 
-Função de Agregação de Pesos: Essa função combina os pesos de todos os nós, calculando a média dos parâmetros para formar o modelo global. Este passo é essencial para o aprendizado federado.
+- Função de Agregação de Pesos: Essa função combina os pesos de todos os nós, calculando a média dos parâmetros para formar o modelo global. Este passo é essencial para o aprendizado federado.
 
-Função de Atualização Global: Após a agregação, os pesos globais são enviados de volta para os nós para que o processo de aprendizado continue.
+- Função de Atualização Global: Após a agregação, os pesos globais são enviados de volta para os nós para que o processo de aprendizado continue.
 
 Resultados
 O projeto conseguiu simular a convergência do modelo usando aprendizado federado. As etapas de treinamento local e agregação permitiram que cada nó contribuísse para o modelo final sem a necessidade de compartilhar dados diretamente.
